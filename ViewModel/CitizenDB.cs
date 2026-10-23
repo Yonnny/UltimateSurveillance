@@ -57,7 +57,22 @@ namespace ViewModel
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            Citizen x = entity as Citizen;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO citizenTbl ([password_hash], [credit_points], [first_name], [last_name], [identity_number], [phone_number], [email], [district], [date_of_birth]) VALUES (@p, @c, @f, @l, @i, @ph, @e, @d, @dob)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@p", new string(x.PasswordHash)));
+                cmd.Parameters.Add(new OleDbParameter("@c", x.CreditPoints));
+                cmd.Parameters.Add(new OleDbParameter("@f", x.FirstName));
+                cmd.Parameters.Add(new OleDbParameter("@l", x.LastName));
+                cmd.Parameters.Add(new OleDbParameter("@i", x.IdentityNumber));
+                cmd.Parameters.Add(new OleDbParameter("@ph", x.PhoneNumber));
+                cmd.Parameters.Add(new OleDbParameter("@e", x.Email));
+                cmd.Parameters.Add(new OleDbParameter("@d", x.District.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@dob", x.DateOfBirth));
+            }
         }
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)

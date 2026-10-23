@@ -48,7 +48,15 @@ namespace ViewModel
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            District x = entity as District;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO districtTbl ([district_name], [city_in]) VALUES (@d, @c)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@d", x.DistrictName));
+                cmd.Parameters.Add(new OleDbParameter("@c", x.CityIn.Idx));
+            }
         }
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)

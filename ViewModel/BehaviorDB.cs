@@ -49,7 +49,16 @@ namespace ViewModel
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            Behavior x = entity as Behavior;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO behaviorTbl ([behavior_name], [classification], [credit_points_change]) VALUES (@b, @c, @p)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@b", x.BehaviorName));
+                cmd.Parameters.Add(new OleDbParameter("@c", x.Classification.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@p", x.CreditPointsChange));
+            }
         }
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)

@@ -45,10 +45,19 @@ namespace ViewModel
             throw new NotImplementedException();
         }
 
+
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            AdminAccess x = entity as AdminAccess;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO adminAccessTbl (access_name) VALUES (@a)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@a", x.AccessName));
+            }
         }
+
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)
         {

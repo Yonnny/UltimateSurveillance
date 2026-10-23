@@ -44,7 +44,20 @@ namespace ViewModel
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            BehaviorToCitizen x = entity as BehaviorToCitizen;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO behaviorToCitizenTbl ([citizen_id], [behavior_id], [date_of_behavior], [district], [description], [latitude], [longitude]) VALUES (@c, @b, @date, @d, @desc, @lat, @lon)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@c", x.Citizen_id.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@b", x.Behavior_id.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@date", x.Date_of_behavior));
+                cmd.Parameters.Add(new OleDbParameter("@d", x.District.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@desc", x.Description));
+                cmd.Parameters.Add(new OleDbParameter("@lat", x.Latitude));
+                cmd.Parameters.Add(new OleDbParameter("@lon", x.Longitude));
+            }
         }
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)

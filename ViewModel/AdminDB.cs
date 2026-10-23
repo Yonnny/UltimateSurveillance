@@ -54,6 +54,17 @@ namespace ViewModel
             }
         }
 
+        public override void Insert(BaseEntity entity)
+        {
+            BaseEntity reqEntity = this.NewEntity();
+            if (entity != null && entity.GetType() == reqEntity.GetType())
+            {
+                updated.Add(new ChangeEntity(base.CreateInsertdSQL, entity));
+                updated.Add(new ChangeEntity(this.CreateInsertdSQL, entity));
+            }
+        }
+
+
 
         protected override void CreateDeletedSQL(BaseEntity entity, OleDbCommand cmd)
         {
@@ -62,7 +73,15 @@ namespace ViewModel
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            Admin x = entity as Admin;
+            if (x != null)
+            {
+                string sqlStr = "INSERT INTO adminTbl ([Idx], [city_accounted_for]) VALUES (@i, @c)";
+
+                cmd.CommandText = sqlStr;
+                cmd.Parameters.Add(new OleDbParameter("@i", x.Idx));
+                cmd.Parameters.Add(new OleDbParameter("@c", x.City_accounted_for.Idx));
+            }
         }
 
         protected override void CreateUpdatedSQL(BaseEntity entity, OleDbCommand cmd)
@@ -78,5 +97,6 @@ namespace ViewModel
                 cmd.Parameters.Add(new OleDbParameter("@id", x.Idx));
             }
         }
+
     }
 }

@@ -13,121 +13,162 @@ namespace Test
         static void Main(string[] args) // https://docs.google.com/document/d/1-jYZq_wkaqm1CG0a6-f79ASN-mOSEdSjFOQBbj8DuAk/edit?tab=t.0
         {
             Console.WriteLine($"{BaseDB.connectionString}\n");
-            Console.WriteLine("\n---------------------------------------------------");
+            Console.WriteLine("---------------------------------------------------");
 
-            CityDB a1 = new();
-            CityList a2 = a1.SelectAll();
-            foreach (City a in a2)
-                Console.WriteLine(a.ToString());    
+            // Create all DB objects
+            CityDB cityDB = new();
+            //AdminAccessDB accessDB = new();
+            //BehaviorClassificationDB classDB = new();
+            DistrictDB districtDB = new();
+            //BehaviorDB behaviorDB = new();
+            CitizenDB citizenDB = new();
+            //BehaviorToCitizenDB behaviorCitizenDB = new();
+            AdminDB adminDB = new();
+            //AccessToAdminDB accessAdminDB = new();
 
-            //City ua = a2[0];
-            //ua.CityName += "flamingo";
-            //a1.Update(ua);
-            //int a3 = a1.SaveChanges();
-            //Console.WriteLine($"{a3} rows were updated");
+            // Load all lists
+            CityList cities = cityDB.SelectAll();
+            //AdminAccessList accesses = accessDB.SelectAll();
+            //BehaviorClassificationList classes = classDB.SelectAll();
+            DistrictList districts = districtDB.SelectAll();
+            //BehaviorList behaviors = behaviorDB.SelectAll();
+            CitizenList citizens = citizenDB.SelectAll();
+            //BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
+            AdminList admins = adminDB.SelectAll();
+            //AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
 
-            //Console.WriteLine("---------------------------------------------------");
+            // Cities
+            //foreach (City city in cities)
+            //    Console.WriteLine(city);
 
-            //AdminAccessDB b1 = new();
-            //AdminAccessList b2 = b1.SelectAll();
-            //foreach (AdminAccess b in b2)
-            //    Console.WriteLine(b.ToString());
+            //City cityUpdate = cities[0];
+            //cityUpdate.CityName += "flamingo";
+            //cityDB.Update(cityUpdate);
+            //Console.WriteLine($"{cityDB.SaveChanges()} rows were updated");
 
-            //AdminAccess ub = b2[0];
-            //ub.AccessName += "flamingo";
-            //b1.Update(ub);
-            //int b3 = b1.SaveChanges();
-            //Console.WriteLine($"{b3} rows were updated");
-
-            //Console.WriteLine("---------------------------------------------------");
-
-            //BehaviorClassificationDB c1 = new();
-            //BehaviorClassificationList c2 = c1.SelectAll();
-            //foreach (BehaviorClassification c in c2)
-            //    Console.WriteLine(c.ToString());
-
-            //BehaviorClassification uc = c2[0];
-            //uc.Level += "flamingo";
-            //c1.Update(uc);
-            //int c3 = c1.SaveChanges();
-            //Console.WriteLine($"{c3} rows were updated");
+            //City cityInsert = new City() { CityName = "flamingoland", NumberOfDistricts = 420 };
+            //cityDB.Insert(cityInsert);
+            //Console.WriteLine($"{cityDB.SaveChanges()} rows were inserted");
 
             //Console.WriteLine("---------------------------------------------------");
 
-            //DistrictDB d1 = new();
-            //DistrictList d2 = d1.SelectAll();
-            //foreach (District d in d2)
-            //    Console.WriteLine(d.ToString());
+            //// Admin access
+            //foreach (AdminAccess access in accesses)
+            //    Console.WriteLine(access);
 
-            //District ud = d2[0];
-            //ud.DistrictName += "flamingo";
-            //d1.Update(ud);
-            //int d3 = d1.SaveChanges();
-            //Console.WriteLine($"{d3} rows were updated");
+            //AdminAccess accessUpdate = accesses[0];
+            //accessUpdate.AccessName += "flamingo";
+            //accessDB.Update(accessUpdate);
+            //Console.WriteLine($"{accessDB.SaveChanges()} rows were updated");
 
-            //Console.WriteLine("---------------------------------------------------");
-
-            //BehaviorDB e1 = new();
-            //BehaviorList e2 = e1.SelectAll();
-            //foreach (Behavior e in e2)
-            //    Console.WriteLine(e.ToString());
-
-            //Behavior ue = e2[0];
-            //ue.BehaviorName += "flamingo";
-            //e1.Update(ue);
-            //int e3 = e1.SaveChanges();
-            //Console.WriteLine($"{e3} rows were updated");
-
-            //Console.WriteLine("---------------------------------------------------");
-            //CitizenDB f1 = new();
-            //CitizenList f2 = f1.SelectAll();
-            //foreach (Citizen f in f2)
-            //    Console.WriteLine(f.ToString());
-
-            //Citizen uf = f2[0];
-            //uf.FirstName += "flamingo";
-            //f1.Update(uf);
-            //int f3 = f1.SaveChanges();
-            //Console.WriteLine($"{f3} rows were updated");
+            //AdminAccess accessInsert = new AdminAccess() { AccessName = "flamingo access" };
+            //accessDB.Insert(accessInsert);
+            //Console.WriteLine($"{accessDB.SaveChanges()} rows were inserted");
 
             //Console.WriteLine("---------------------------------------------------");
 
-            //BehaviorToCitizenDB g1 = new();
-            //BehaviorToCitizenList g2 = g1.SelectAll();
-            //foreach (BehaviorToCitizen g in g2)
-            //    Console.WriteLine(g.ToString());
+            //// Behavior classifications
+            //foreach (BehaviorClassification classification in classes)
+            //    Console.WriteLine(classification);
 
-            //BehaviorToCitizen ug = g2[0];
-            //ug.Description += "flamingo";
-            //g1.Update(ug);
-            //int g3 = g1.SaveChanges();
-            //Console.WriteLine($"{g3} rows were updated");
+            //BehaviorClassification classUpdate = classes[0];
+            //classUpdate.Level += "flamingo";
+            //classDB.Update(classUpdate);
+            //Console.WriteLine($"{classDB.SaveChanges()} rows were updated");
 
-            //Console.WriteLine("---------------------------------------------------");
-
-            //AdminDB h1 = new();
-            //AdminList h2 = h1.SelectAll();
-            //foreach (Admin h in h2)
-            //    Console.WriteLine(h.ToString());
-
-            //Admin uh = h2[0];
-            //uh.City_accounted_for = a2[2];
-            //h1.Update(uh);
-            //int h3 = h1.SaveChanges();
-            //Console.WriteLine($"{h3} rows were updated");
+            //BehaviorClassification classInsert = new BehaviorClassification() { Level = "flamingo behavior class" };
+            //classDB.Insert(classInsert);
+            //Console.WriteLine($"{classDB.SaveChanges()} rows were inserted");
 
             //Console.WriteLine("---------------------------------------------------");
 
-            //AccessToAdminDB i1 = new();
-            //AccessToAdminList i2 = i1.SelectAll();
-            //foreach (AccessToAdmin i in i2)
-            //    Console.WriteLine(i.ToString());
+            //// Districts
+            //foreach (District district in districts)
+            //    Console.WriteLine(district);
 
-            //AccessToAdmin ui = i2[0];
-            //ui.AdminAccessId = b2[0];
-            //i1.Update(ui);
-            //int i3 = i1.SaveChanges();
-            //Console.WriteLine($"{i3} rows were updated");
+            //District districtUpdate = districts[0];
+            //districtUpdate.DistrictName += "flamingo";
+            //districtDB.Update(districtUpdate);
+            //Console.WriteLine($"{districtDB.SaveChanges()} rows were updated");
+
+            //District districtInsert = new District() { DistrictName = "flamingo disc", CityIn = cities[0] };
+            //districtDB.Insert(districtInsert);
+            //Console.WriteLine($"{districtDB.SaveChanges()} rows were inserted");
+
+            //Console.WriteLine("---------------------------------------------------");
+
+            //// Behaviors
+            //foreach (Behavior behavior in behaviors)
+            //    Console.WriteLine(behavior);
+
+            //Behavior behaviorUpdate = behaviors[0];
+            //behaviorUpdate.BehaviorName += "flamingo";
+            //behaviorDB.Update(behaviorUpdate);
+            //Console.WriteLine($"{behaviorDB.SaveChanges()} rows were updated");
+
+            //Behavior behaviorInsert = new Behavior() { BehaviorName = "flamingo behave", Classification = classes[0], CreditPointsChange = 10 };
+            //behaviorDB.Insert(behaviorInsert);
+            //Console.WriteLine($"{behaviorDB.SaveChanges()} rows were inserted");
+
+            //Console.WriteLine("---------------------------------------------------");
+
+            //// Citizens
+            //foreach (Citizen citizen in citizens)
+            //    Console.WriteLine(citizen);
+
+            //Citizen citizenUpdate = citizens[0];
+            //citizenUpdate.FirstName += "flamingo";
+            //citizenDB.Update(citizenUpdate);
+            //Console.WriteLine($"{citizenDB.SaveChanges()} rows were updated");
+
+            //Citizen citizenInsert = new Citizen() { PasswordHash = "pass123".ToCharArray(), CreditPoints = 100, FirstName = "Flamingo", LastName = "Land", IdentityNumber = "123456789", PhoneNumber = "0501234567", Email = "flamingo@example.com", District = districts[0], DateOfBirth = new DateTime(2000, 1, 1) };
+            //citizenDB.Insert(citizenInsert);
+            //Console.WriteLine($"{citizenDB.SaveChanges()} rows were inserted");
+
+            //Console.WriteLine("---------------------------------------------------");
+
+            //// Behaviors linked to citizens
+            //foreach (BehaviorToCitizen link in behaviorCitizens)
+            //    Console.WriteLine(link);
+
+            //BehaviorToCitizen linkUpdate = behaviorCitizens[0];
+            //linkUpdate.Description += "flamingo";
+            //behaviorCitizenDB.Update(linkUpdate);
+            //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were updated");
+
+            //BehaviorToCitizen linkInsert = new BehaviorToCitizen() { Citizen_id = citizens[0], Behavior_id = behaviors[0], Date_of_behavior = DateTime.Today, District = districts[0], Description = "flamingo desc", Latitude = 31.9730, Longitude = 34.7925 };
+            //behaviorCitizenDB.Insert(linkInsert);
+            //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were inserted");
+
+            //Console.WriteLine("---------------------------------------------------");
+
+            //// Admins
+            //foreach (Admin admin in admins)
+            //    Console.WriteLine(admin);
+
+            //Admin adminUpdate = admins[0];
+            //adminUpdate.City_accounted_for = cities[2];
+            //adminDB.Update(adminUpdate);
+            //Console.WriteLine($"{adminDB.SaveChanges()} rows were updated");
+
+            //Admin adminInsert = new Admin() { PasswordHash = "iufasbfuiasfiu".ToCharArray(), CreditPoints = 9999, FirstName = "Flamingo2", LastName = "EXTREME", IdentityNumber = "987654321", PhoneNumber = "0501276502", Email = "flamingoEXTREME@example.com", District = districts[3], DateOfBirth = new DateTime(1980, 1, 1), Idx=4, City_accounted_for = cities[0] };
+            //adminDB.Insert(adminInsert);
+            //Console.WriteLine($"{adminDB.SaveChanges()} rows were inserted");
+
+            //Console.WriteLine("---------------------------------------------------");
+
+            //// Access linked to admins
+            //foreach (AccessToAdmin link in accessAdmins)
+            //    Console.WriteLine(link);
+
+            //AccessToAdmin accessAdminUpdate = accessAdmins[0];
+            //accessAdminUpdate.AdminAccessId = accesses[0];
+            //accessAdminDB.Update(accessAdminUpdate);
+            //Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were updated");
+
+            //AccessToAdmin accessAdminInsert = new AccessToAdmin() { AdminId = admins[0], AdminAccessId = accesses[0] };
+            //accessAdminDB.Insert(accessAdminInsert);
+            //Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were inserted");
 
             //Console.WriteLine("---------------------------------------------------");
 

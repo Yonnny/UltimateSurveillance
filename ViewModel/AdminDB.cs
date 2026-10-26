@@ -59,8 +59,18 @@ namespace ViewModel
             BaseEntity reqEntity = this.NewEntity();
             if (entity != null && entity.GetType() == reqEntity.GetType())
             {
-                updated.Add(new ChangeEntity(base.CreateInsertdSQL, entity));
-                updated.Add(new ChangeEntity(this.CreateInsertdSQL, entity));
+                inserted.Add(new ChangeEntity(base.CreateInsertdSQL, entity));
+                inserted.Add(new ChangeEntity(this.CreateInsertdSQL, entity));
+            }
+        }
+
+        public override void Delete(BaseEntity entity)
+        {
+            BaseEntity reqEntity = this.NewEntity();
+            if (entity != null && entity.GetType() == reqEntity.GetType())
+            {
+                deleted.Add(new ChangeEntity(base.CreateDeletedSQL, entity));
+                deleted.Add(new ChangeEntity(this.CreateDeletedSQL, entity));
             }
         }
 
@@ -68,7 +78,14 @@ namespace ViewModel
 
         protected override void CreateDeletedSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            Admin x = entity as Admin;
+            if (x != null)
+            {
+                string sqlStr = $"DELETE FROM adminTbl where idx=@id";
+
+                command.CommandText = sqlStr;
+                command.Parameters.Add(new OleDbParameter("@id", x.Idx));
+            }
         }
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)

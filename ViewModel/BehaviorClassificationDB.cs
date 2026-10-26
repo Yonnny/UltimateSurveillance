@@ -42,7 +42,14 @@ namespace ViewModel
 
         protected override void CreateDeletedSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            BehaviorClassification x = entity as BehaviorClassification;
+            if (x != null)
+            {
+                string sqlStr = $"DELETE FROM behaviorClassificationTbl where idx=@id";
+
+                command.CommandText = sqlStr;
+                command.Parameters.Add(new OleDbParameter("@id", x.Idx));
+            }
         }
 
         protected override void CreateInsertdSQL(BaseEntity entity, OleDbCommand cmd)

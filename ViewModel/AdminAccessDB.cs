@@ -42,7 +42,14 @@ namespace ViewModel
 
         protected override void CreateDeletedSQL(BaseEntity entity, OleDbCommand cmd)
         {
-            throw new NotImplementedException();
+            AdminAccess x = entity as AdminAccess;
+            if (x != null)
+            {
+                string sqlStr = $"DELETE FROM adminAccessTbl where idx=@id";
+
+                command.CommandText = sqlStr;
+                command.Parameters.Add(new OleDbParameter("@id", x.Idx));
+            }
         }
 
 

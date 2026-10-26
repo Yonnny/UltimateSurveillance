@@ -17,25 +17,25 @@ namespace Test
 
             // Create all DB objects
             CityDB cityDB = new();
-            //AdminAccessDB accessDB = new();
-            //BehaviorClassificationDB classDB = new();
+            AdminAccessDB accessDB = new();
+            BehaviorClassificationDB classDB = new();
             DistrictDB districtDB = new();
-            //BehaviorDB behaviorDB = new();
+            BehaviorDB behaviorDB = new();
             CitizenDB citizenDB = new();
-            //BehaviorToCitizenDB behaviorCitizenDB = new();
+            BehaviorToCitizenDB behaviorCitizenDB = new();
             AdminDB adminDB = new();
-            //AccessToAdminDB accessAdminDB = new();
+            AccessToAdminDB accessAdminDB = new();
 
-            // Load all lists
+            //Load all lists
             CityList cities = cityDB.SelectAll();
-            //AdminAccessList accesses = accessDB.SelectAll();
-            //BehaviorClassificationList classes = classDB.SelectAll();
+            AdminAccessList accesses = accessDB.SelectAll();
+            BehaviorClassificationList classes = classDB.SelectAll();
             DistrictList districts = districtDB.SelectAll();
-            //BehaviorList behaviors = behaviorDB.SelectAll();
+            BehaviorList behaviors = behaviorDB.SelectAll();
             CitizenList citizens = citizenDB.SelectAll();
-            //BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
+            BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
             AdminList admins = adminDB.SelectAll();
-            //AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
+            AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
 
             // Cities
             //foreach (City city in cities)
@@ -127,12 +127,13 @@ namespace Test
 
             //Console.WriteLine("---------------------------------------------------");
 
-            //// Behaviors linked to citizens
+            // Behaviors linked to citizens
             //foreach (BehaviorToCitizen link in behaviorCitizens)
             //    Console.WriteLine(link);
 
             //BehaviorToCitizen linkUpdate = behaviorCitizens[0];
-            //linkUpdate.Description += "flamingo";
+            //linkUpdate.District = districts[36];             //            ??????????????????????????????????????????????????????????????????????
+            //linkUpdate.District = DistrictDB.SelectById(37); // why no work??????????????????????????????????????????????????????????????????????
             //behaviorCitizenDB.Update(linkUpdate);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were updated");
 
@@ -151,7 +152,16 @@ namespace Test
             //adminDB.Update(adminUpdate);
             //Console.WriteLine($"{adminDB.SaveChanges()} rows were updated");
 
-            //Admin adminInsert = new Admin() { PasswordHash = "iufasbfuiasfiu".ToCharArray(), CreditPoints = 9999, FirstName = "Flamingo2", LastName = "EXTREME", IdentityNumber = "987654321", PhoneNumber = "0501276502", Email = "flamingoEXTREME@example.com", District = districts[3], DateOfBirth = new DateTime(1980, 1, 1), Idx=4, City_accounted_for = cities[0] };
+            //Admin adminInsert = new Admin() { PasswordHash = "iufasbfuiasfiu".ToCharArray(),
+            //    CreditPoints = 9999,
+            //    FirstName = "Flamingo2",
+            //    LastName = "EXTREME",
+            //    IdentityNumber = "987654321",
+            //    PhoneNumber = "0501276502",
+            //    Email = "flamingoEXTREME@example.com",
+            //    District = districts[3],
+            //    DateOfBirth = new DateTime(1980, 1, 1),
+            //    City_accounted_for = cities[3] };
             //adminDB.Insert(adminInsert);
             //Console.WriteLine($"{adminDB.SaveChanges()} rows were inserted");
 

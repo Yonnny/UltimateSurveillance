@@ -12,7 +12,7 @@ namespace ViewModel
         public AdminList SelectAll()
         {
             command.CommandText = $"SELECT adminTbl.city_accounted_for, citizenTbl.idx, citizenTbl.password_hash, citizenTbl.credit_points, citizenTbl.first_name, citizenTbl.last_name, citizenTbl.identity_number, citizenTbl.phone_number, citizenTbl.email, \r\n" +
-                $"citizenTbl.date_of_birth, citizenTbl.district\r\n" +
+                $"citizenTbl.date_of_birth, citizenTbl.district, citizenTbl.exists\r\n" +
                 $"FROM (AdminTbl INNER JOIN\r\n" +
                 $"citizenTbl ON AdminTbl.idx = citizenTbl.idx)"; ;
 

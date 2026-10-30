@@ -12,8 +12,8 @@ namespace Test
     {
         static void Main(string[] args) // https://docs.google.com/document/d/1-jYZq_wkaqm1CG0a6-f79ASN-mOSEdSjFOQBbj8DuAk/edit?tab=t.0
         {
-            Console.WriteLine($"{BaseDB.connectionString}\n");
-            Console.WriteLine("---------------------------------------------------");
+            //Console.WriteLine($"{BaseDB.connectionString}\n");
+            //Console.WriteLine("---------------------------------------------------");
 
             // Create all DB objects and lists
             CityDB cityDB = new();
@@ -56,8 +56,8 @@ namespace Test
             //cityDB.Insert(cityInsert);
             //Console.WriteLine($"{cityDB.SaveChanges()} rows were inserted");
 
-            cityDB.Delete(cities[0]);
-            Console.WriteLine($"{cityDB.SaveChanges()} rows were deleted");
+            //cityDB.Delete(cities[0]);
+            //Console.WriteLine($"{cityDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -74,8 +74,8 @@ namespace Test
             //accessDB.Insert(accessInsert);
             //Console.WriteLine($"{accessDB.SaveChanges()} rows were inserted");
 
-            accessDB.Delete(accesses[0]);
-            Console.WriteLine($"{accessDB.SaveChanges()} rows were deleted");
+            //accessDB.Delete(accesses[0]);
+            //Console.WriteLine($"{accessDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -92,8 +92,8 @@ namespace Test
             //classDB.Insert(classInsert);
             //Console.WriteLine($"{classDB.SaveChanges()} rows were inserted");
 
-            classDB.Delete(classes[0]);
-            Console.WriteLine($"{classDB.SaveChanges()} rows were deleted");
+            //classDB.Delete(classes[0]);
+            //Console.WriteLine($"{classDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -110,8 +110,8 @@ namespace Test
             //districtDB.Insert(districtInsert);
             //Console.WriteLine($"{districtDB.SaveChanges()} rows were inserted");
 
-            districtDB.Delete(districts[0]);
-            Console.WriteLine($"{districtDB.SaveChanges()} rows were deleted");
+            //districtDB.Delete(districts[0]);
+            //Console.WriteLine($"{districtDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -128,8 +128,8 @@ namespace Test
             //behaviorDB.Insert(behaviorInsert);
             //Console.WriteLine($"{behaviorDB.SaveChanges()} rows were inserted");
 
-            behaviorDB.Delete(behaviors[0]);
-            Console.WriteLine($"{behaviorDB.SaveChanges()} rows were deleted");
+            //behaviorDB.Delete(behaviors[0]);
+            //Console.WriteLine($"{behaviorDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -146,8 +146,8 @@ namespace Test
             //citizenDB.Insert(citizenInsert);
             //Console.WriteLine($"{citizenDB.SaveChanges()} rows were inserted");
 
-            citizenDB.Delete(citizens[0]);
-            Console.WriteLine($"{citizenDB.SaveChanges()} rows were deleted");
+            //citizenDB.Delete(citizens[0]);
+            //Console.WriteLine($"{citizenDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -157,8 +157,9 @@ namespace Test
 
             //BehaviorToCitizen linkUpdate = behaviorCitizens[0];
             //linkUpdate.District = districts[36];
-                                                                //            ??????????????????????????????????????????????????????????????????????
-            //linkUpdate.District = DistrictDB.SelectById(37); // why no work??????????????????????????????????????????????????????????????????????
+
+            //                                                   // ??????????????????????????????????????????????????????????????????????
+            ////linkUpdate.District = DistrictDB.SelectById(37); // why no work??????????????????????????????????????????????????????????????????????
             //behaviorCitizenDB.Update(linkUpdate);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were updated");
 
@@ -166,8 +167,8 @@ namespace Test
             //behaviorCitizenDB.Insert(linkInsert);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were inserted");
 
-            behaviorCitizenDB.Delete(behaviorCitizens[0]);
-            Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were deleted");
+            //behaviorCitizenDB.Delete(behaviorCitizens[0]);
+            //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -180,7 +181,9 @@ namespace Test
             //adminDB.Update(adminUpdate);
             //Console.WriteLine($"{adminDB.SaveChanges()} rows were updated");
 
-            //Admin adminInsert = new Admin() { PasswordHash = "iufasbfuiasfiu".ToCharArray(),
+            //Admin adminInsert = new Admin()
+            //{
+            //    PasswordHash = "iufasbfuiasfiu".ToCharArray(),
             //    CreditPoints = 9999,
             //    FirstName = "Flamingo2",
             //    LastName = "EXTREME",
@@ -189,16 +192,17 @@ namespace Test
             //    Email = "flamingoEXTREME@example.com",
             //    District = districts[3],
             //    DateOfBirth = new DateTime(1980, 1, 1),
-            //    City_accounted_for = cities[3] };
+            //    City_accounted_for = cities[3]
+            //};
             //adminDB.Insert(adminInsert);
             //Console.WriteLine($"{adminDB.SaveChanges()} rows were inserted");
 
-            adminDB.Delete(admins[0]);
-            Console.WriteLine($"{adminDB.SaveChanges()} rows were deleted");
+            //adminDB.Delete(admins[1]);
+            //Console.WriteLine($"{adminDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
-            //// Access linked to admins
+            // Access linked to admins
             //foreach (AccessToAdmin link in accessAdmins)
             //    Console.WriteLine(link);
 
@@ -211,8 +215,8 @@ namespace Test
             //accessAdminDB.Insert(accessAdminInsert);
             //Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were inserted");
 
-            accessAdminDB.Delete(accessAdmins[0]);
-            Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were deleted");
+            //accessAdminDB.Delete(accessAdmins[0]);
+            //Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
         }

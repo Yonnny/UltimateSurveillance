@@ -56,6 +56,9 @@ namespace Test
             //cityDB.Insert(cityInsert);
             //Console.WriteLine($"{cityDB.SaveChanges()} rows were inserted");
 
+            cityDB.Delete(cities[0]);
+            Console.WriteLine($"{cityDB.SaveChanges()} rows were deleted");
+
             //Console.WriteLine("---------------------------------------------------");
 
             //// Admin access
@@ -70,6 +73,9 @@ namespace Test
             //AdminAccess accessInsert = new AdminAccess() { AccessName = "flamingo access" };
             //accessDB.Insert(accessInsert);
             //Console.WriteLine($"{accessDB.SaveChanges()} rows were inserted");
+
+            accessDB.Delete(accesses[0]);
+            Console.WriteLine($"{accessDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -86,6 +92,9 @@ namespace Test
             //classDB.Insert(classInsert);
             //Console.WriteLine($"{classDB.SaveChanges()} rows were inserted");
 
+            classDB.Delete(classes[0]);
+            Console.WriteLine($"{classDB.SaveChanges()} rows were deleted");
+
             //Console.WriteLine("---------------------------------------------------");
 
             //// Districts
@@ -101,6 +110,9 @@ namespace Test
             //districtDB.Insert(districtInsert);
             //Console.WriteLine($"{districtDB.SaveChanges()} rows were inserted");
 
+            districtDB.Delete(districts[0]);
+            Console.WriteLine($"{districtDB.SaveChanges()} rows were deleted");
+
             //Console.WriteLine("---------------------------------------------------");
 
             //// Behaviors
@@ -115,6 +127,9 @@ namespace Test
             //Behavior behaviorInsert = new Behavior() { BehaviorName = "flamingo behave", Classification = classes[0], CreditPointsChange = 10 };
             //behaviorDB.Insert(behaviorInsert);
             //Console.WriteLine($"{behaviorDB.SaveChanges()} rows were inserted");
+
+            behaviorDB.Delete(behaviors[0]);
+            Console.WriteLine($"{behaviorDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -132,7 +147,7 @@ namespace Test
             //Console.WriteLine($"{citizenDB.SaveChanges()} rows were inserted");
 
             citizenDB.Delete(citizens[0]);
-            Console.WriteLine(citizenDB.SaveChanges());
+            Console.WriteLine($"{citizenDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -141,7 +156,8 @@ namespace Test
             //    Console.WriteLine(link);
 
             //BehaviorToCitizen linkUpdate = behaviorCitizens[0];
-            //linkUpdate.District = districts[36];             //            ??????????????????????????????????????????????????????????????????????
+            //linkUpdate.District = districts[36];
+                                                                //            ??????????????????????????????????????????????????????????????????????
             //linkUpdate.District = DistrictDB.SelectById(37); // why no work??????????????????????????????????????????????????????????????????????
             //behaviorCitizenDB.Update(linkUpdate);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were updated");
@@ -149,6 +165,9 @@ namespace Test
             //BehaviorToCitizen linkInsert = new BehaviorToCitizen() { Citizen_id = citizens[0], Behavior_id = behaviors[0], Date_of_behavior = DateTime.Today, District = districts[0], Description = "flamingo desc", Latitude = 31.9730, Longitude = 34.7925 };
             //behaviorCitizenDB.Insert(linkInsert);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were inserted");
+
+            behaviorCitizenDB.Delete(behaviorCitizens[0]);
+            Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were deleted");
 
             //Console.WriteLine("---------------------------------------------------");
 
@@ -174,6 +193,9 @@ namespace Test
             //adminDB.Insert(adminInsert);
             //Console.WriteLine($"{adminDB.SaveChanges()} rows were inserted");
 
+            adminDB.Delete(admins[0]);
+            Console.WriteLine($"{adminDB.SaveChanges()} rows were deleted");
+
             //Console.WriteLine("---------------------------------------------------");
 
             //// Access linked to admins
@@ -189,8 +211,10 @@ namespace Test
             //accessAdminDB.Insert(accessAdminInsert);
             //Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were inserted");
 
-            //Console.WriteLine("---------------------------------------------------");
+            accessAdminDB.Delete(accessAdmins[0]);
+            Console.WriteLine($"{accessAdminDB.SaveChanges()} rows were deleted");
 
+            //Console.WriteLine("---------------------------------------------------");
         }
     }
 }

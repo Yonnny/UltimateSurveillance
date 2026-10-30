@@ -34,6 +34,7 @@ namespace ViewModel
             x.Email = reader["email"].ToString();
             x.District = DistrictDB.SelectById((int)reader["district"]);
             x.DateOfBirth = (DateTime)reader["date_of_birth"];
+            x.Exists = (bool)reader["exists"];
 
             base.CreateModel(entity);
             return entity;
@@ -55,7 +56,7 @@ namespace ViewModel
             Citizen x = entity as Citizen;
             if (x != null)
             {
-                string sqlStr = $"DELETE FROM citizenTbl where idx=@id";
+                string sqlStr = $"UPDATE citizenTbl SET [exists]={false} where idx=@id";
 
                 command.CommandText = sqlStr;
                 command.Parameters.Add(new OleDbParameter("@id", x.Idx));
@@ -67,7 +68,7 @@ namespace ViewModel
             Citizen x = entity as Citizen;
             if (x != null)
             {
-                string sqlStr = "INSERT INTO citizenTbl ([password_hash], [credit_points], [first_name], [last_name], [identity_number], [phone_number], [email], [district], [date_of_birth]) VALUES (@p, @c, @f, @l, @i, @ph, @e, @d, @dob)";
+                string sqlStr = "INSERT INTO citizenTbl ([password_hash], [credit_points], [first_name], [last_name], [identity_number], [phone_number], [email], [district], [date_of_birth], [exists]) VALUES (@p, @c, @f, @l, @i, @ph, @e, @d, @dob, @exs)";
 
                 cmd.CommandText = sqlStr;
                 cmd.Parameters.Add(new OleDbParameter("@p", new string(x.PasswordHash)));
@@ -79,6 +80,7 @@ namespace ViewModel
                 cmd.Parameters.Add(new OleDbParameter("@e", x.Email));
                 cmd.Parameters.Add(new OleDbParameter("@d", x.District.Idx));
                 cmd.Parameters.Add(new OleDbParameter("@dob", x.DateOfBirth));
+                cmd.Parameters.Add(new OleDbParameter("@exs", x.Exists));
             }
         }
 
@@ -90,7 +92,7 @@ namespace ViewModel
                 string sqlStr = $"UPDATE citizenTbl " +
                                 $"SET [password_hash]=@password, [credit_points]=@points, [first_name]=@firstName, " +
                                 $"[last_name]=@lastName, [identity_number]=@identity, [phone_number]=@phone, " +
-                                $"[email]=@email, [district]=@district, [date_of_birth]=@birth " +
+                                $"[email]=@email, [district]=@district, [date_of_birth]=@birth, [exists]=@exs " +
                                 $"WHERE idx=@id";
                 cmd.CommandText = sqlStr;
                 cmd.Parameters.Add(new OleDbParameter("@password", new string(x.PasswordHash)));
@@ -102,7 +104,9 @@ namespace ViewModel
                 cmd.Parameters.Add(new OleDbParameter("@email", x.Email));
                 cmd.Parameters.Add(new OleDbParameter("@district", x.District.Idx));
                 cmd.Parameters.Add(new OleDbParameter("@birth", x.DateOfBirth));
+                cmd.Parameters.Add(new OleDbParameter("@exs", x.Exists));
                 cmd.Parameters.Add(new OleDbParameter("@id", x.Idx));
+
             }
         }
     }

@@ -15,6 +15,7 @@ namespace Model
         private string email;
         private District district;
         private DateTime date_of_birth;
+        private bool exists;
 
         public char[] PasswordHash { get => password_hash; set => password_hash = value; }
         public int CreditPoints { get => credit_points; set => credit_points = value; }
@@ -25,7 +26,8 @@ namespace Model
         public string Email { get => email; set => email = value; }
         public DateTime DateOfBirth { get => date_of_birth; set => date_of_birth = value; }
         public District District { get => district; set => district = value; }
+        public bool Exists { get => exists; set => exists = value; }
 
-        public override string ToString() => $"{this.Idx} {new string(this.password_hash)} {this.credit_points} {this.first_name} {this.last_name} {this.identity_number} {this.phone_number} {this.email} {this.district} {this.date_of_birth}";
+        public override string ToString() => $"{this.Idx} {new string(this.password_hash)} {this.credit_points} {this.first_name} {this.last_name} {this.identity_number} {this.phone_number} {this.email} {this.district} {this.date_of_birth} {this.exists}";
     }
 }

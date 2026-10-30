@@ -15,26 +15,32 @@ namespace Test
             Console.WriteLine($"{BaseDB.connectionString}\n");
             Console.WriteLine("---------------------------------------------------");
 
-            // Create all DB objects
+            // Create all DB objects and lists
             CityDB cityDB = new();
-            AdminAccessDB accessDB = new();
-            BehaviorClassificationDB classDB = new();
-            DistrictDB districtDB = new();
-            BehaviorDB behaviorDB = new();
-            CitizenDB citizenDB = new();
-            BehaviorToCitizenDB behaviorCitizenDB = new();
-            AdminDB adminDB = new();
-            AccessToAdminDB accessAdminDB = new();
-
-            //Load all lists
             CityList cities = cityDB.SelectAll();
+
+            AdminAccessDB accessDB = new();
             AdminAccessList accesses = accessDB.SelectAll();
+
+            BehaviorClassificationDB classDB = new();
             BehaviorClassificationList classes = classDB.SelectAll();
+
+            DistrictDB districtDB = new();
             DistrictList districts = districtDB.SelectAll();
+
+            BehaviorDB behaviorDB = new();
             BehaviorList behaviors = behaviorDB.SelectAll();
+
+            CitizenDB citizenDB = new();
             CitizenList citizens = citizenDB.SelectAll();
+
+            BehaviorToCitizenDB behaviorCitizenDB = new();
             BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
+
+            AdminDB adminDB = new();
             AdminList admins = adminDB.SelectAll();
+
+            AccessToAdminDB accessAdminDB = new();
             AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
 
             // Cities
@@ -124,6 +130,9 @@ namespace Test
             //Citizen citizenInsert = new Citizen() { PasswordHash = "pass123".ToCharArray(), CreditPoints = 100, FirstName = "Flamingo", LastName = "Land", IdentityNumber = "123456789", PhoneNumber = "0501234567", Email = "flamingo@example.com", District = districts[0], DateOfBirth = new DateTime(2000, 1, 1) };
             //citizenDB.Insert(citizenInsert);
             //Console.WriteLine($"{citizenDB.SaveChanges()} rows were inserted");
+
+            citizenDB.Delete(citizens[0]);
+            Console.WriteLine(citizenDB.SaveChanges());
 
             //Console.WriteLine("---------------------------------------------------");
 

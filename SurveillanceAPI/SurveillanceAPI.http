@@ -1,0 +1,10 @@
+@SurveillanceAPI_HostAddress = http://localhost:5266
+
+GET {{SurveillanceAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{SurveillanceAPI_HostAddress}}/api/select/SelectAllCities
+
+###

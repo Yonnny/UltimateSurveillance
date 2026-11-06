@@ -175,7 +175,168 @@ namespace SurveillanceAPI.Controllers
 
         // ------------------------------------------------------------
 
-        //[HttpPut]
+        [HttpPut]
+        public int UpdateAnAccessToAdmin([FromBody] AccessToAdmin x)
+        {
+            AccessToAdminDB db = new AccessToAdminDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
 
+        [HttpPut]
+        public int UpdateAnAdmin([FromBody] Admin x)
+        {
+            AdminDB db = new AdminDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateAnAdminAccess([FromBody] AdminAccess x)
+        {
+            AdminAccessDB db = new AdminAccessDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateABehavior([FromBody] Behavior x)
+        {
+            BehaviorDB db = new BehaviorDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateABehaviorClassification([FromBody] BehaviorClassification x)
+        {
+            BehaviorClassificationDB db = new BehaviorClassificationDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateABehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        {
+            BehaviorToCitizenDB db = new BehaviorToCitizenDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateACitizen([FromBody] Citizen x)
+        {
+            CitizenDB db = new CitizenDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateACity([FromBody] City x)
+        {
+            CityDB db = new CityDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpPut]
+        public int UpdateADistrict([FromBody] District x)
+        {
+            DistrictDB db = new DistrictDB();
+            db.Update(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        // ------------------------------------------------------------
+
+        [HttpDelete]
+        public int DeleteAnAccessToAdmin([FromBody] AccessToAdmin x)
+        {
+            AccessToAdminDB db = new AccessToAdminDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteAnAdmin([FromBody] Admin x)
+        {
+            AdminDB db = new AdminDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteAnAdminAccess([FromBody] AdminAccess x)
+        {
+            AdminAccessDB db = new AdminAccessDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteABehavior([FromBody] Behavior x)
+        {
+            BehaviorDB db = new BehaviorDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteABehaviorClassification([FromBody] BehaviorClassification x)
+        {
+            BehaviorClassificationDB db = new BehaviorClassificationDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteABehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        {
+            BehaviorToCitizenDB db = new BehaviorToCitizenDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteACitizen([FromBody] Citizen x)
+        {
+            CitizenDB db = new CitizenDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteACity([FromBody] City x)
+        {
+            CityDB db = new CityDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
+
+        [HttpDelete]
+        public int DeleteADistrict([FromBody] District x)
+        {
+            DistrictDB db = new DistrictDB();
+            db.Delete(x);
+            int y = db.SaveChanges();
+            return y;
+        }
     }
 }

@@ -10,7 +10,9 @@ namespace Test
 {
     internal class Program
     {
-        static void Main(string[] args) // https://docs.google.com/document/d/1-jYZq_wkaqm1CG0a6-f79ASN-mOSEdSjFOQBbj8DuAk/edit?tab=t.0
+        static void Main(string[] args)
+        // https://docs.google.com/document/d/1-jYZq_wkaqm1CG0a6-f79ASN-mOSEdSjFOQBbj8DuAk/edit?tab=t.0
+        // https://docs.google.com/document/d/1bpSADI0GnfnCgBWufRGaHk3C3FPmP44D-xDMLchBtQA/edit?tab=t.0
         {
             //Console.WriteLine($"{BaseDB.connectionString}\n");
             //Console.WriteLine("---------------------------------------------------");

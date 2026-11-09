@@ -84,7 +84,7 @@ namespace SurveillanceAPI.Controllers
         // ------------------------------------------------------------
 
         [HttpPost]
-        public int InsertAnAccessToAdmin([FromBody] AccessToAdmin x)
+        public int InsertAccessToAdmin([FromBody] AccessToAdmin x)
         {
             AccessToAdminDB db = new AccessToAdminDB();
             db.Insert(x);
@@ -93,7 +93,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertAnAdmin([FromBody] Admin x)
+        public int InsertAdmin([FromBody] Admin x)
         {
             AdminDB db = new AdminDB();
             db.Insert(x);
@@ -102,7 +102,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertAnAdminAccess([FromBody] AdminAccess x)
+        public int InsertAdminAccess([FromBody] AdminAccess x)
         {
             AdminAccessDB db = new AdminAccessDB();
             db.Insert(x);
@@ -111,7 +111,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertABehavior([FromBody] Behavior x)
+        public int InsertBehavior([FromBody] Behavior x)
         {
             BehaviorDB db = new BehaviorDB();
             db.Insert(x);
@@ -120,7 +120,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertABehaviorClassification([FromBody] BehaviorClassification x)
+        public int InsertBehaviorClassification([FromBody] BehaviorClassification x)
         {
             BehaviorClassificationDB db = new BehaviorClassificationDB();
             db.Insert(x);
@@ -129,7 +129,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertABehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        public int InsertBehaviorToCitizen([FromBody] BehaviorToCitizen x)
         {
             BehaviorToCitizenDB db = new BehaviorToCitizenDB();
             db.Insert(x);
@@ -138,7 +138,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertACitizen([FromBody] Citizen x)
+        public int InsertCitizen([FromBody] Citizen x)
         {
             CitizenDB db = new CitizenDB();
             db.Insert(x);
@@ -147,7 +147,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertACity([FromBody] City x)
+        public int InsertCity([FromBody] City x)
         {
             CityDB db = new CityDB();
             db.Insert(x);
@@ -156,7 +156,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPost]
-        public int InsertADistrict([FromBody] District x)
+        public int InsertDistrict([FromBody] District x)
         {
             DistrictDB db = new DistrictDB();
             db.Insert(x);
@@ -167,7 +167,7 @@ namespace SurveillanceAPI.Controllers
         // ------------------------------------------------------------
 
         [HttpPut]
-        public int UpdateAnAccessToAdmin([FromBody] AccessToAdmin x)
+        public int UpdateAccessToAdmin([FromBody] AccessToAdmin x)
         {
             AccessToAdminDB db = new AccessToAdminDB();
             db.Update(x);
@@ -176,7 +176,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateAnAdmin([FromBody] Admin x)
+        public int UpdateAdmin([FromBody] Admin x)
         {
             AdminDB db = new AdminDB();
             db.Update(x);
@@ -185,7 +185,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateAnAdminAccess([FromBody] AdminAccess x)
+        public int UpdateAdminAccess([FromBody] AdminAccess x)
         {
             AdminAccessDB db = new AdminAccessDB();
             db.Update(x);
@@ -194,7 +194,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateABehavior([FromBody] Behavior x)
+        public int UpdateBehavior([FromBody] Behavior x)
         {
             BehaviorDB db = new BehaviorDB();
             db.Update(x);
@@ -203,7 +203,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateABehaviorClassification([FromBody] BehaviorClassification x)
+        public int UpdateBehaviorClassification([FromBody] BehaviorClassification x)
         {
             BehaviorClassificationDB db = new BehaviorClassificationDB();
             db.Update(x);
@@ -212,7 +212,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateABehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        public int UpdateBehaviorToCitizen([FromBody] BehaviorToCitizen x)
         {
             BehaviorToCitizenDB db = new BehaviorToCitizenDB();
             db.Update(x);
@@ -221,7 +221,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateACitizen([FromBody] Citizen x)
+        public int UpdateCitizen([FromBody] Citizen x)
         {
             CitizenDB db = new CitizenDB();
             db.Update(x);
@@ -230,7 +230,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateACity([FromBody] City x)
+        public int UpdateCity([FromBody] City x)
         {
             CityDB db = new CityDB();
             db.Update(x);
@@ -239,7 +239,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpPut]
-        public int UpdateADistrict([FromBody] District x)
+        public int UpdateDistrict([FromBody] District x)
         {
             DistrictDB db = new DistrictDB();
             db.Update(x);
@@ -250,7 +250,7 @@ namespace SurveillanceAPI.Controllers
         // ------------------------------------------------------------
 
         [HttpDelete]
-        public int DeleteAnAccessToAdmin([FromBody] AccessToAdmin x)
+        public int DeleteAccessToAdmin([FromBody] AccessToAdmin x)
         {
             AccessToAdminDB db = new AccessToAdminDB();
             db.Delete(x);
@@ -259,7 +259,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteAnAdmin([FromBody] Admin x)
+        public int DeleteAdmin([FromBody] Admin x)
         {
             AdminDB db = new AdminDB();
             db.Delete(x);
@@ -268,7 +268,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteAnAdminAccess([FromBody] AdminAccess x)
+        public int DeleteAdminAccess([FromBody] AdminAccess x)
         {
             AdminAccessDB db = new AdminAccessDB();
             db.Delete(x);
@@ -277,7 +277,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteABehavior([FromBody] Behavior x)
+        public int DeleteBehavior([FromBody] Behavior x)
         {
             BehaviorDB db = new BehaviorDB();
             db.Delete(x);
@@ -286,7 +286,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteABehaviorClassification([FromBody] BehaviorClassification x)
+        public int DeleteBehaviorClassification([FromBody] BehaviorClassification x)
         {
             BehaviorClassificationDB db = new BehaviorClassificationDB();
             db.Delete(x);
@@ -295,7 +295,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteABehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        public int DeleteBehaviorToCitizen([FromBody] BehaviorToCitizen x)
         {
             BehaviorToCitizenDB db = new BehaviorToCitizenDB();
             db.Delete(x);
@@ -304,7 +304,7 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteACitizen([FromBody] Citizen x)
+        public int DeleteCitizen([FromBody] Citizen x)
         {
             CitizenDB db = new CitizenDB();
             db.Delete(x);
@@ -313,16 +313,21 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete]
-        public int DeleteACity([FromBody] City x)
+        public int DeleteCity([FromBody] int x)  // doesnt work*******************************
+                                                 // maybe send with only id instead of city and have
+                                                 // an exception for the citizen's delete
         {
             CityDB db = new CityDB();
-            db.Delete(x);
+            //City c = db.SelectAll().Find(z => z.Idx == x);
+            //db.Delete(c);
+            db.Delete(new City() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
+
         [HttpDelete]
-        public int DeleteADistrict([FromBody] District x)
+        public int DeleteDistrict([FromBody] District x)
         {
             DistrictDB db = new DistrictDB();
             db.Delete(x);

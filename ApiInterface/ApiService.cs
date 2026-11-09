@@ -27,22 +27,21 @@ namespace ApiInterface
 
             public async Task<CityList> GetAllCities()
             {
-                return await client.GetFromJsonAsync<CityList>(uri + "/api/select/SelectAllCities"); // select*
+                return await client.GetFromJsonAsync<CityList>(uri + "/api/select/SelectAllCities");
             }
 
-            public async Task<int> DeleteACity(int id)
+            public async Task<int> DeleteACity(City c) // doesnt work*******************************
             {
-                return (await client.DeleteAsync(uri + "/api/Insert/DeleteCity/" + id)).IsSuccessStatusCode ? 1 : 0;
+                return (await client.DeleteFromJsonAsync<City>(uri + "/api/select/DeleteCity", c)).IsSuccessStatusCode ? 1 : 0;
             }
-
             public async Task<int> UpdateACity(City c)
             {
-                return (await client.PutAsJsonAsync<City>(uri + "/api/Insert/UpdateCity", c)).IsSuccessStatusCode ? 1 : 0;
+                return (await client.PutAsJsonAsync<City>(uri + "/api/select/UpdateCity", c)).IsSuccessStatusCode ? 1 : 0;
             }
 
             public async Task<int> InsertACity(City c)
             {
-                return (await client.PostAsJsonAsync<City>(uri + "/api/Insert/InsertCity", c)).IsSuccessStatusCode ? 1 : 0;
+                return (await client.PostAsJsonAsync<City>(uri + "/api/select/InsertCity", c)).IsSuccessStatusCode ? 1 : 0;
             }
         }
     }

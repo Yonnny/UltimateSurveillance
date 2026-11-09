@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ApiInterface/ApiInterface.csproj" Id="5f889bb7-15a1-410c-b7a9-361a562961fd" />
   <Project Path="Model/Model.csproj" />
   <Project Path="SurveillanceAPI/SurveillanceAPI.csproj" Id="3d722052-e5b9-4a6d-984c-7fe1a7ab0e8a" />
   <Project Path="Test/Test.csproj" Id="cd289345-7b00-46ee-849b-becdcd8e35dc" />

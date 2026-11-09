@@ -8,3 +8,19 @@ Accept: application/json
 GET {{SurveillanceAPI_HostAddress}}/api/select/SelectAllCities
 
 ###
+
+GET {{SurveillanceAPI_HostAddress}}/api/select/SelectAllCities
+
+###
+
+GET {{SurveillanceAPI_HostAddress}}/api/select/SelectAllCities
+
+###
+
+GET {{SurveillanceAPI_HostAddress}}/api/select/SelectAllCitizens
+
+###
+
+GET {{SurveillanceAPI_HostAddress}}/api/Select/CitySelector
+
+###

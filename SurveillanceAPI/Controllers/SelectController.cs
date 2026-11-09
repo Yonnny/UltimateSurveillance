@@ -10,7 +10,6 @@ namespace SurveillanceAPI.Controllers
     public class SelectController : ControllerBase
     {
         [HttpGet]
-        [ActionName("AccessToAdminSelector")]
         public AccessToAdminList SelectAllAccessToAdmins()
         {
             AccessToAdminDB db = new AccessToAdminDB();
@@ -19,7 +18,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("AdminSelector")]
         public AdminList SelectAllAdmins()
         {
             AdminDB db = new AdminDB();
@@ -28,7 +26,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("AdminAccessSelector")]
         public AdminAccessList SelectAllAdminAccesses()
         {
             AdminAccessDB db = new AdminAccessDB();
@@ -37,7 +34,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("BehaviorSelector")]
         public BehaviorList SelectAllBehaviors()
         {
             BehaviorDB db = new BehaviorDB();
@@ -46,7 +42,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("BehaviorClassificationSelector")]
         public BehaviorClassificationList SelectAllBehaviorClassifications()
         {
             BehaviorClassificationDB db = new BehaviorClassificationDB();
@@ -55,7 +50,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("BehaviorToCitizenSelector")]
         public BehaviorToCitizenList SelectAllBehaviorsToCitizens()
         {
             BehaviorToCitizenDB db = new BehaviorToCitizenDB();
@@ -64,7 +58,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("CitizenSelector")]
         public CitizenList SelectAllCitizens()
         {
             CitizenDB db = new CitizenDB();
@@ -73,7 +66,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("CitySelector")]
         public CityList SelectAllCities()
         {
             CityDB db = new CityDB();
@@ -82,7 +74,6 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpGet]
-        [ActionName("DistrictSelector")]
         public DistrictList SelectAllDistricts()
         {
             DistrictDB db = new DistrictDB();

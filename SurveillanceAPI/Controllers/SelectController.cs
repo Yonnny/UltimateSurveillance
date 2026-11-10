@@ -249,65 +249,65 @@ namespace SurveillanceAPI.Controllers
 
         // ------------------------------------------------------------
 
-        [HttpDelete]
-        public int DeleteAccessToAdmin([FromBody] AccessToAdmin x)
+        [HttpDelete("{x}")]
+        public int DeleteAccessToAdmin(int x)
         {
             AccessToAdminDB db = new AccessToAdminDB();
-            db.Delete(x);
+            db.Delete(new AccessToAdmin() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteAdmin([FromBody] Admin x)
+        [HttpDelete("{x}")]
+        public int DeleteAdmin(int x)
         {
             AdminDB db = new AdminDB();
-            db.Delete(x);
+            db.Delete(new Admin() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteAdminAccess([FromBody] AdminAccess x)
+        [HttpDelete("{x}")]
+        public int DeleteAdminAccess(int x)
         {
             AdminAccessDB db = new AdminAccessDB();
-            db.Delete(x);
+            db.Delete(new AdminAccess() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteBehavior([FromBody] Behavior x)
+        [HttpDelete("{x}")]
+        public int DeleteBehavior(int x)
         {
             BehaviorDB db = new BehaviorDB();
-            db.Delete(x);
+            db.Delete(new Behavior() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteBehaviorClassification([FromBody] BehaviorClassification x)
+        [HttpDelete("{x}")]
+        public int DeleteBehaviorClassification(int x)
         {
             BehaviorClassificationDB db = new BehaviorClassificationDB();
-            db.Delete(x);
+            db.Delete(new BehaviorClassification() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteBehaviorToCitizen([FromBody] BehaviorToCitizen x)
+        [HttpDelete("{x}")]
+        public int DeleteBehaviorToCitizen(int x)
         {
             BehaviorToCitizenDB db = new BehaviorToCitizenDB();
-            db.Delete(x);
+            db.Delete(new BehaviorToCitizen() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteCitizen([FromBody] Citizen x)
+        [HttpDelete("{x}")]
+        public int DeleteCitizen(int x)  // problomatic **********************************************************
         {
             CitizenDB db = new CitizenDB();
-            db.Delete(x);
+            db.Delete(new Citizen() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
@@ -334,11 +334,11 @@ namespace SurveillanceAPI.Controllers
         //    return db.SaveChanges();
         //}
 
-        [HttpDelete]
-        public int DeleteDistrict([FromBody] District x)
+        [HttpDelete("{x}")]
+        public int DeleteDistrict(int x)
         {
             DistrictDB db = new DistrictDB();
-            db.Delete(x);
+            db.Delete(new District() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }

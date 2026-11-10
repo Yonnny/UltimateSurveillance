@@ -312,19 +312,27 @@ namespace SurveillanceAPI.Controllers
             return y;
         }
 
-        [HttpDelete]
-        public int DeleteCity([FromBody] int x)  // doesnt work*******************************
-                                                 // maybe send with only id instead of city and have
-                                                 // an exception for the citizen's delete
+        [HttpDelete("{x}")]
+        public int DeleteCity(int x)
         {
             CityDB db = new CityDB();
-            //City c = db.SelectAll().Find(z => z.Idx == x);
-            //db.Delete(c);
             db.Delete(new City() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }
 
+        //[HttpDelete]
+        //public int DeleteCity(int x)
+        //{
+        //    CityDB db = new CityDB();
+        //    City c = db.SelectAll().Find(z => z.Idx == x);
+
+        //    if (c == null)
+        //        return 0;
+
+        //    db.Delete(c);
+        //    return db.SaveChanges();
+        //}
 
         [HttpDelete]
         public int DeleteDistrict([FromBody] District x)

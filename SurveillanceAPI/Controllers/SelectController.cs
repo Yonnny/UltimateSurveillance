@@ -304,10 +304,11 @@ namespace SurveillanceAPI.Controllers
         }
 
         [HttpDelete("{x}")]
-        public int DeleteCitizen(int x)  // problomatic **********************************************************
+        public int DeleteCitizen(int x)
         {
             CitizenDB db = new CitizenDB();
-            db.Delete(new Citizen() { Idx = x });
+            Citizen c = db.SelectAll().Find(z => z.Idx == x); // citizen special
+            db.Delete(c);
             int y = db.SaveChanges();
             return y;
         }

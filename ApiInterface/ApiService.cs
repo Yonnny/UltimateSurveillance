@@ -56,7 +56,7 @@ namespace ApiInterface
             }
             public async Task<BehaviorToCitizenList> GetAllBehaviorToCitizens()
             {
-                return await client.GetFromJsonAsync<BehaviorToCitizenList>(uri + "/api/select/SelectAllBehaviorToCitizens");
+                return await client.GetFromJsonAsync<BehaviorToCitizenList>(uri + "/api/select/SelectAllBehaviorsToCitizens");
             }
             public async Task<CitizenList> GetAllCitizens()
             {

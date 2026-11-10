@@ -18,34 +18,34 @@ namespace Test
             //Console.WriteLine("---------------------------------------------------");
 
             // Create all DB objects and lists
-            CityDB cityDB = new();
-            CityList cities = cityDB.SelectAll();
+            //CityDB cityDB = new();
+            //CityList cities = cityDB.SelectAll();
 
-            AdminAccessDB accessDB = new();
-            AdminAccessList accesses = accessDB.SelectAll();
+            //AdminAccessDB accessDB = new();
+            //AdminAccessList accesses = accessDB.SelectAll();
 
-            BehaviorClassificationDB classDB = new();
-            BehaviorClassificationList classes = classDB.SelectAll();
+            //BehaviorClassificationDB classDB = new();
+            //BehaviorClassificationList classes = classDB.SelectAll();
 
-            DistrictDB districtDB = new();
-            DistrictList districts = districtDB.SelectAll();
+            //DistrictDB districtDB = new();
+            //DistrictList districts = districtDB.SelectAll();
 
-            BehaviorDB behaviorDB = new();
-            BehaviorList behaviors = behaviorDB.SelectAll();
+            //BehaviorDB behaviorDB = new();
+            //BehaviorList behaviors = behaviorDB.SelectAll();
 
-            CitizenDB citizenDB = new();
-            CitizenList citizens = citizenDB.SelectAll();
+            //CitizenDB citizenDB = new();
+            //CitizenList citizens = citizenDB.SelectAll();
 
-            BehaviorToCitizenDB behaviorCitizenDB = new();
-            BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
+            //BehaviorToCitizenDB behaviorCitizenDB = new();
+            //BehaviorToCitizenList behaviorCitizens = behaviorCitizenDB.SelectAll();
 
-            AdminDB adminDB = new();
-            AdminList admins = adminDB.SelectAll();
+            //AdminDB adminDB = new();
+            //AdminList admins = adminDB.SelectAll();
 
-            AccessToAdminDB accessAdminDB = new();
-            AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
+            //AccessToAdminDB accessAdminDB = new();
+            //AccessToAdminList accessAdmins = accessAdminDB.SelectAll();
 
-            // Cities
+            //Cities
             //foreach (City city in cities)
             //    Console.WriteLine(city);
 
@@ -153,14 +153,14 @@ namespace Test
 
             //Console.WriteLine("---------------------------------------------------");
 
-            // Behaviors linked to citizens
+            //Behaviors linked to citizens
             //foreach (BehaviorToCitizen link in behaviorCitizens)
             //    Console.WriteLine(link);
 
             //BehaviorToCitizen linkUpdate = behaviorCitizens[0];
             //linkUpdate.District = districts[36];
 
-            //                                                   // ??????????????????????????????????????????????????????????????????????
+            //// ??????????????????????????????????????????????????????????????????????
             ////linkUpdate.District = DistrictDB.SelectById(37); // why no work??????????????????????????????????????????????????????????????????????
             //behaviorCitizenDB.Update(linkUpdate);
             //Console.WriteLine($"{behaviorCitizenDB.SaveChanges()} rows were updated");
@@ -204,7 +204,7 @@ namespace Test
 
             //Console.WriteLine("---------------------------------------------------");
 
-            // Access linked to admins
+            //Access linked to admins
             //foreach (AccessToAdmin link in accessAdmins)
             //    Console.WriteLine(link);
 

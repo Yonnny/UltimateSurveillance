@@ -23,7 +23,6 @@ namespace SurveillanceAPI
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();

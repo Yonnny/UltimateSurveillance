@@ -307,8 +307,7 @@ namespace SurveillanceAPI.Controllers
         public int DeleteCitizen(int x)
         {
             CitizenDB db = new CitizenDB();
-            Citizen c = db.SelectAll().Find(z => z.Idx == x); // citizen special
-            db.Delete(c);
+            db.Delete(new Citizen() { Idx = x });
             int y = db.SaveChanges();
             return y;
         }

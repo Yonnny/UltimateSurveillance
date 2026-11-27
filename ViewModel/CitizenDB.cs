@@ -15,7 +15,7 @@ namespace ViewModel
             return lst;
         }
 
-        public override BaseEntity NewEntity() // רק למחלקות ללא ירושה או הכלה
+        public override BaseEntity NewEntity()
         {
             return new Citizen();
         }
@@ -24,8 +24,7 @@ namespace ViewModel
         {
             Citizen x = entity as Citizen;
 
-            x.PasswordHash = (reader["password_hash"].ToString())
-                                                    .ToArray<char>();
+            x.PasswordHashBase64 = reader["password_hash"].ToString();
             x.CreditPoints = (int)reader["credit_points"];
             x.FirstName = reader["first_name"].ToString();
             x.LastName = reader["last_name"].ToString();
@@ -71,7 +70,7 @@ namespace ViewModel
                 string sqlStr = "INSERT INTO citizenTbl ([password_hash], [credit_points], [first_name], [last_name], [identity_number], [phone_number], [email], [district], [date_of_birth], [exists]) VALUES (@p, @c, @f, @l, @i, @ph, @e, @d, @dob, @exs)";
 
                 cmd.CommandText = sqlStr;
-                cmd.Parameters.Add(new OleDbParameter("@p", new string(x.PasswordHash)));
+                cmd.Parameters.Add(new OleDbParameter("@p", x.PasswordHashBase64));
                 cmd.Parameters.Add(new OleDbParameter("@c", x.CreditPoints));
                 cmd.Parameters.Add(new OleDbParameter("@f", x.FirstName));
                 cmd.Parameters.Add(new OleDbParameter("@l", x.LastName));
@@ -95,7 +94,7 @@ namespace ViewModel
                                 $"[email]=@email, [district]=@district, [date_of_birth]=@birth, [exists]=@exs " +
                                 $"WHERE idx=@id";
                 cmd.CommandText = sqlStr;
-                cmd.Parameters.Add(new OleDbParameter("@password", new string(x.PasswordHash)));
+                cmd.Parameters.Add(new OleDbParameter("@password", x.PasswordHashBase64));
                 cmd.Parameters.Add(new OleDbParameter("@points", x.CreditPoints));
                 cmd.Parameters.Add(new OleDbParameter("@firstName", x.FirstName));
                 cmd.Parameters.Add(new OleDbParameter("@lastName", x.LastName));

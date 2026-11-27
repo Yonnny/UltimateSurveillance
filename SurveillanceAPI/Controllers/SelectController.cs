@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using System.Buffers.Text;
+using System.Security.Cryptography;
+using System.Text;
 using ViewModel;
 
 namespace SurveillanceAPI.Controllers
@@ -9,6 +12,16 @@ namespace SurveillanceAPI.Controllers
     [ApiController]
     public class SelectController : ControllerBase
     {
+
+        [HttpGet]
+        public Citizen LoginAttempt(string identityNumber, string passwordHashBase64)
+        {
+            CitizenDB db = new CitizenDB();
+
+            Citizen c = db.SelectAll().FirstOrDefault(x => (x.IdentityNumber == identityNumber && x.PasswordHashBase64 == passwordHashBase64));
+            return c;
+        }
+
         [HttpGet]
         public AccessToAdminList SelectAllAccessToAdmins()
         {

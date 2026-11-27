@@ -1,0 +1,27 @@
+@SurveillanceAPI_HostAddress = http://localhost:5266
+
+POST {{SurveillanceAPI_HostAddress}}/api/select/LoginAttempt
+Content-Type: application/json
+
+"string"
+
+###
+
+@identityNumber=string
+@password_hash_base64=string
+POST {{SurveillanceAPI_HostAddress}}/api/select/LoginAttempt?identityNumber={{identityNumber}}&password_hash_base64={{password_hash_base64}}
+
+###
+
+@passwordHashBase64=string
+POST {{SurveillanceAPI_HostAddress}}/api/select/LoginAttempt?identityNumber={{identityNumber}}&passwordHashBase64={{passwordHashBase64}}
+
+###
+
+POST {{SurveillanceAPI_HostAddress}}/api/select/LoginAttempt?identityNumber={{identityNumber}}&passwordHashBase64={{passwordHashBase64}}
+
+###
+
+GET {{SurveillanceAPI_HostAddress}}/api/select/LoginAttempt?identityNumber={{identityNumber}}&passwordHashBase64={{passwordHashBase64}}
+
+###

@@ -6,7 +6,7 @@ namespace Model
 {
     public class Citizen : BaseEntity
     {
-        private char[] password_hash;
+        private string password_hash_base64;
         private int credit_points;
         private string first_name;
         private string last_name;
@@ -17,7 +17,7 @@ namespace Model
         private DateTime date_of_birth;
         private bool exists;
 
-        public char[] PasswordHash { get => password_hash; set => password_hash = value; }
+        public string PasswordHashBase64 { get => password_hash_base64; set => password_hash_base64 = value; }
         public int CreditPoints { get => credit_points; set => credit_points = value; }
         public string FirstName { get => first_name; set => first_name = value; }
         public string LastName { get => last_name; set => last_name = value; }
@@ -28,6 +28,6 @@ namespace Model
         public District District { get => district; set => district = value; }
         public bool Exists { get => exists; set => exists = value; }
 
-        public override string ToString() => $"{this.Idx} {new string(this.password_hash)} {this.credit_points} {this.first_name} {this.last_name} {this.identity_number} {this.phone_number} {this.email} {this.district} {this.date_of_birth} {this.exists}";
+        public override string ToString() => $"{this.Idx} {this.password_hash_base64} {this.credit_points} {this.first_name} {this.last_name} {this.identity_number} {this.phone_number} {this.email} {this.district} {this.date_of_birth} {this.exists}";
     }
 }

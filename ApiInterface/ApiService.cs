@@ -25,13 +25,16 @@ namespace ApiInterface
                 client = new HttpClient();
             }
 
-            //public async Task<int> DeleteACity(int id)
+            //public async Task<int> DeleteCity(int id)
             //{
             //    return (await client.DeleteAsync(uri + "/api/select/DeleteCity?x=" + id))
             //        .IsSuccessStatusCode ? 1 : 0;
             //}
 
-            // make sure to have tests for all of these: ****************************************************************************
+            public async Task<Citizen> LoginAttempt(string identityNumber, string passwordHashBase64)
+            {
+                return await client.GetFromJsonAsync<Citizen>(uri + $"/api/select/LoginAttempt?identityNumber={identityNumber}&passwordHashBase64={passwordHashBase64}");
+            }
 
             #region GetAll
             public async Task<AccessToAdminList> GetAllAccessToAdmins()
@@ -188,6 +191,8 @@ namespace ApiInterface
                 return (await client.PostAsJsonAsync<District>(uri + "/api/select/InsertDistrict", district)).IsSuccessStatusCode ? 1 : 0;
             }
             #endregion
+
+
         }
     }
 }
